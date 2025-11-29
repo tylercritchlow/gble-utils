@@ -5,7 +5,7 @@ import net.minecraft.client.gui.GuiGraphics
 import net.minecraft.client.DeltaTracker
 import net.minecraft.client.Minecraft
 import net.minecraft.world.entity.player.Player
-import com.gble.commands.InventoryHudCommand
+import com.gble.config.GbleConfig
 
 object HudRenderingEntrypoint : HudRenderCallback {
     private var currentTime = 0.0
@@ -18,7 +18,7 @@ object HudRenderingEntrypoint : HudRenderCallback {
         val minecraft = Minecraft.getInstance()
         val player = minecraft.player ?: return
 
-        if (!InventoryHudCommand.isHudEnabled()) return
+        if (!GbleConfig.isHudEnabled()) return
 
         currentTime = net.minecraft.Util.getMillis() / 1000.0
 

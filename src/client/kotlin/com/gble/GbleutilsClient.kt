@@ -2,7 +2,7 @@ package com.gble
 
 import com.gble.commands.ScaleCommand
 import com.gble.commands.InventoryHudCommand
-import com.gble.config.ItemScalingConfig
+import com.gble.config.GbleConfig
 import com.gble.hud.HudRenderingEntrypoint
 import net.fabricmc.api.ClientModInitializer
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback
@@ -10,7 +10,7 @@ import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallba
 object GbleutilsClient : ClientModInitializer {
 	override fun onInitializeClient() {
 		// Load configuration
-		ItemScalingConfig.loadConfig()
+		GbleConfig.loadConfig()
 
 		// Register commands
 		ClientCommandRegistrationCallback.EVENT.register { dispatcher, _ ->
